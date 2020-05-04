@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import './Videoitem.css'
+import Logo from '../images/logo.jpg';
 
 export default class Search extends Component {
 
@@ -18,16 +20,23 @@ export default class Search extends Component {
 
     render() {
         return (
-            <div className="search-bar ui segment">
-                <form onSubmit={this.onFormSubmit} className="ui form">
-                    <div className="field">
-                        <label>Search</label>
-                        <input type="text" value={this.state.term}
+            <div className="ui fluid action input">
+                <form onSubmit={this.onFormSubmit} className="ui form head">
+                <img className="logo-img" src = {Logo}/>
+                    <div className="search-bar">
+                    
+                        <input size="60" type="text" className="item1" value={this.state.term}
                         onChange={this.onInputChange}
                         />
-                    </div>
+                         <div class="ui button item2" onClick={this.onFormSubmit}>Search</div>
+                        </div>
                 </form>
             </div>
         )
     }
 }
+
+// <div class="ui fluid action input">
+//   <input type="text" placeholder="Search...">
+
+// </div>
